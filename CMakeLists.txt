@@ -126,7 +126,11 @@ add_executable(
 
 
 
-target_link_libraries(graph_server ${GRAPH_LIBS} ws2_32)
+if(WIN32)
+  target_link_libraries(graph_server ${GRAPH_LIBS} ws2_32)
+else()
+  target_link_libraries(graph_server ${GRAPH_LIBS})
+endif()
 
 ####################################################################
 #    Исходные файлы клиентской части (набор тестов).
@@ -160,6 +164,9 @@ add_executable(
 ####################################################################
 
 
-
-target_link_libraries(graph_test ${GRAPH_LIBS} ws2_32)
+if(WIN32)
+  target_link_libraries(graph_test ${GRAPH_LIBS} ws2_32)
+else()
+  target_link_libraries(graph_test ${GRAPH_LIBS})
+endif()
 
