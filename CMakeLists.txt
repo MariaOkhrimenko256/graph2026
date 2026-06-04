@@ -112,10 +112,12 @@ add_executable(
   include/graph.hpp
   include/iterators.hpp
   include/oriented_graph.hpp
+  include/stor_vagner.hpp
   include/weighted_graph.hpp
   include/weighted_oriented_graph.hpp
   methods/main.cpp
   methods/methods.hpp
+  methods/stor_vagner_method.cpp
 )
 
 ####################################################################
@@ -124,7 +126,7 @@ add_executable(
 
 
 
-target_link_libraries(graph_server ${GRAPH_LIBS})
+target_link_libraries(graph_server ${GRAPH_LIBS} ws2_32)
 
 ####################################################################
 #    Исходные файлы клиентской части (набор тестов).
@@ -138,12 +140,14 @@ add_executable(
   include/graph.hpp
   include/iterators.hpp
   include/oriented_graph.hpp
+  include/stor_vagner.hpp
   include/weighted_graph.hpp
   include/weighted_oriented_graph.hpp
   tests/graph_test.cpp
   tests/io.hpp
   tests/main.cpp
   tests/oriented_graph_test.cpp
+  tests/stor_vagner_test.cpp
   tests/test.hpp
   tests/test_core.cpp
   tests/test_core.hpp
@@ -157,5 +161,5 @@ add_executable(
 
 
 
-target_link_libraries(graph_test ${GRAPH_LIBS})
+target_link_libraries(graph_test ${GRAPH_LIBS} ws2_32)
 

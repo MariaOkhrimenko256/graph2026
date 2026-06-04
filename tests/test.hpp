@@ -33,6 +33,9 @@ void TestWeightedOrientedGraph();
 /* Сюда нужно добавить объявления тестовых функций. */
 
 
+void TestStorVagner(httplib::Client* cli);
+
+
 
 /* Конец вставки. */
 
